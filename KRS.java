@@ -1,17 +1,18 @@
-public class KRS {
-    private String[] matKul = new String[5];
-    private int jmlMatKul = 0;
-    private final int isiKRS = 5;
+public class KRSmain {
+    public static void main(String[] args) {
+        KRS krs = new KRS();
+        krs.tambahMatKul("Pengantar Keilmuan Komputer");
+        krs.tambahMatKul("Pemrograman Dasar");
+        krs.tambahMatKul("Arsitektur dan Organisasi Komputer");
+        krs.tambahMatKul("Agama Islam");
+        krs.tambahMatKul("Bahasa Inggris");
+        krs.tambahMatKul("");
 
-    public void tambahMatKul(String matKul) {
-        if(jmlMatKul < isiKRS) {
-            this.matKul[jmlMatKul] = matKul;
-            jmlMatKul++;
-        } else {
-            System.out.println(matKul + "Error: KRS telah penuh");
+        String[] daftarMatKul = krs.getmatKul();
+        for (String MatKul : daftarMatKul) {
+            if (MatKul != null) {
+                System.out.println(MatKul);
+            }
         }
-    }
-    public String[] getmatKul() {
-return matKul;
     }
 }
